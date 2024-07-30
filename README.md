@@ -5,7 +5,7 @@
 This repository provides a basic template for building gRPC services in Go. It includes a simple gRPC server and client example, along with a Makefile for easy management of the build process.
 
 ## Directory Structure
-
+```bash
 .
 ├── api
 │ └── v1
@@ -30,7 +30,7 @@ This repository provides a basic template for building gRPC services in Go. It i
 │ └── v1
 │ └── helloworld.proto # Protobuf file
 └── README.md # This README file
-
+```
 
 ## Getting Started
 
