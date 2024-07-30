@@ -26,6 +26,7 @@ all: proto build
 clean:
 	rm -rf $(GO_OUT_DIR)/grpc/*
 	rm -f $(SERVER_BIN) $(CLIENT_BIN)
+	rm -f $(COVERAGE_FILE) $(COVERAGE_HTML)
 
 # Generate Go code from protobuf
 proto:
