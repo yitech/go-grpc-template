@@ -31,17 +31,6 @@ This repository provides a basic template for building gRPC services in Go. It i
 │ └── helloworld.pb.go
 ├── LICENSE # License file
 ├── Makefile # Makefile for build automation
-├── pkg # Serve as a library for rpc
-│   └── client
-│       ├── client.go
-│       ├── client_test.go
-│       ├── interface.go
-│       └── v1
-│           ├── helloworld
-│           │   ├── helloworld.go
-│           │   └── interface.go
-│           ├── interface.go
-│           └── v1.go
 ├── proto
 │ └── v1
 │ └── helloworld.proto # Protobuf file
@@ -90,17 +79,11 @@ make build
 ./bin/client
 ```
 
-### Install gRPC client for other repo
-```bash
-go get github.com/yitech/go-grpc-template@latest
-```
-
 ### Project Layout
-- proto/v1/helloworld.proto: Protobuf definition for the helloworld service.
-- grpc/v1/helloworld: Generated Go code for the helloworld service.
+- proto/helloworld.proto: Protobuf definition for the helloworld service.
+- grpc/helloworld: Generated Go code for the helloworld service.
 - cmd/server/main.go: Entrypoint of the gRPC server.
 - cmd/client/main.go: Entrypoint of the gRPC client.
-- pkg/client : go style client library for RPC call without proto
 - compile_proto.sh: Script to compile protobuf files.
 - Makefile: Makefile to automate the build process.
 

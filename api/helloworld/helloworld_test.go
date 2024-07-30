@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	pb "github.com/yitech/go-grpc-template/grpc/v1/helloworld"
+	pb "github.com/yitech/go-grpc-template/grpc/helloworld"
 )
 
 func TestSayHello(t *testing.T) {

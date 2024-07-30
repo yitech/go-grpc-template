@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	pb "github.com/yitech/go-grpc-template/grpc/v1/helloworld"
+	pb "github.com/yitech/go-grpc-template/grpc/helloworld"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )
