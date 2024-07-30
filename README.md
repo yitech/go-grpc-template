@@ -19,12 +19,12 @@ This repository provides a basic template for building gRPC services in Go. It i
 │ ├── client
 │ │ └── main.go # gRPC client implementation
 │ └── server
-│ └── main.go # gRPC server implementation
+│   └── main.go # gRPC server implementation
 ├── compile_proto.sh # Script to compile protobuf files
 ├── go.mod # Go module file
 ├── go.sum # Go dependencies file
 ├── grpc
-│ └── helloworld # Generated gRPC code
+│ ├── helloworld # Generated gRPC code
 │ ├── helloworld_grpc.pb.go
 │ └── helloworld.pb.go
 ├── LICENSE # License file
