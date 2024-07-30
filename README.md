@@ -13,7 +13,6 @@ This repository provides a basic template for building gRPC services in Go. It i
 ```bash
 .
 ├── api
-│ └── v1
 │ └── helloworld.go # Generated gRPC code
 ├── bin # Directory for binaries
 ├── cmd
@@ -25,14 +24,12 @@ This repository provides a basic template for building gRPC services in Go. It i
 ├── go.mod # Go module file
 ├── go.sum # Go dependencies file
 ├── grpc
-│ └── v1
 │ └── helloworld # Generated gRPC code
 │ ├── helloworld_grpc.pb.go
 │ └── helloworld.pb.go
 ├── LICENSE # License file
 ├── Makefile # Makefile for build automation
 ├── proto
-│ └── v1
 │ └── helloworld.proto # Protobuf file
 └── README.md # This README file
 ```
