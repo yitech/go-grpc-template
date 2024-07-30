@@ -13,6 +13,10 @@ CLIENT_BIN = bin/client
 PROTOC_GEN_GO = protoc-gen-go
 PROTOC_GEN_GO_GRPC = protoc-gen-go-grpc
 
+# Coverage file
+COVERAGE_FILE = coverage.out
+COVERAGE_HTML = coverage.html
+
 .PHONY: all clean proto build server client
 
 # Default target
@@ -37,3 +41,10 @@ server:
 # Build client binary
 client:
 	go build -o $(CLIENT_BIN) cmd/client/*.go
+
+lint:
+	golangci-lint run
+
+test:
+	go test -coverprofile=$(COVERAGE_FILE) ./api/...
+	go tool cover -html=$(COVERAGE_FILE) -o $(COVERAGE_HTML)
