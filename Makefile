@@ -47,5 +47,5 @@ lint:
 	golangci-lint run
 
 test:
-	go test -coverprofile=$(COVERAGE_FILE) ./api/...
+	go test -coverprofile=$(COVERAGE_FILE) ./api/... ./pkg/...
 	go tool cover -html=$(COVERAGE_FILE) -o $(COVERAGE_HTML)

@@ -1,21 +1,20 @@
 package v1
 
-import "github.com/yitech/go-grpc-template/pkg/client/v1/helloworld"
+import (
+	"github.com/yitech/go-grpc-template/pkg/client/v1/helloworld"
+	"google.golang.org/grpc"
+)
 
 type V1 struct {
-	address string
+	conn *grpc.ClientConn
 }
 
-func NewV1(address string) IV1 {
+func NewV1(conn *grpc.ClientConn) IV1 {
 	return &V1{
-		address: address,
+		conn: conn,
 	}
 }
 
 func (v *V1) HelloWorld() helloworld.IHelloWorld {
-	hw, err := helloworld.NewGreeterClient(v.address)
-	if err != nil {
-		return nil
-	}
-	return hw
+	return helloworld.NewGreeterClient(v.conn)
 }
