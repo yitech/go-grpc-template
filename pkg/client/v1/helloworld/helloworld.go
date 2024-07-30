@@ -28,7 +28,3 @@ func (c *GreeterClient) SayHello(ctx context.Context, name string) (string, erro
 	r, _ := c.client.SayHello(ctx, &pb.HelloRequest{Name: name})
 	return r.GetMessage(), nil
 }
-
-func (c *GreeterClient) Close() error {
-	return c.conn.Close()
-}

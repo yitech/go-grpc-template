@@ -1,4 +1,4 @@
-package helloworld
+package client
 
 import (
 	"context"
@@ -8,13 +8,13 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/bmizerany/assert"
+	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	api "github.com/yitech/go-grpc-template/api/v1/helloworld"
 	pb "github.com/yitech/go-grpc-template/grpc/v1/helloworld"
 )
 
-func TestHelloWorld_SayHello(t *testing.T) {
+func TestClient_HelloWorld(t *testing.T) {
 	// Create a listener on a random port
 	lis, err := net.Listen("tcp", ":0")
 	require.NoError(t, err)
@@ -31,16 +31,16 @@ func TestHelloWorld_SayHello(t *testing.T) {
 	// Create a client to connect to the server
 	conn, err := grpc.NewClient(lis.Addr().String(), grpc.WithTransportCredentials(insecure.NewCredentials()))
 	require.NoError(t, err)
-	client := NewGreeterClient(conn)
+	defer conn.Close()
 
-	require.NoError(t, err)
-	defer client.Close()
+	// Create a V1 client
+	client := NewClient(conn)
 
 	// Create a context
 	ctx := context.Background()
 
 	// Make a request
-	resp, err := client.SayHello(ctx, "test")
+	resp, err := client.V1().HelloWorld().SayHello(ctx, "test")
 	require.NoError(t, err)
 
 	// Assert the response
