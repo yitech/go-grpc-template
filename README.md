@@ -1,4 +1,5 @@
 <img src="https://go.dev/images/gophers/pink.svg" width="150" height="150">
+
 # gRPC Go Template
 
 This repository provides a basic template for building gRPC services in Go. It includes a simple gRPC server and client example, along with a Makefile for easy management of the build process.
