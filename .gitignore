@@ -21,3 +21,7 @@ bin/
 # Go workspace file
 go.work
 go.work.sum
+
+# Coverage
+coverage.html
+coverage.out
