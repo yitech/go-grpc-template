@@ -21,12 +21,12 @@ jobs:
       run: |
         go mod tidy
 
-    - name: Run golint
+    - name: Run lint
       run: |
         go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
         make lint
     
-    - name: Run tests witj coverage
+    - name: Run tests with coverage
       run: | 
         make test
 
@@ -36,3 +36,4 @@ jobs:
         file: coverage.out
         flags: unittests
         name: codecov-umbrella
+        token: ${{ secrets.CODECOV_TOKEN }}
