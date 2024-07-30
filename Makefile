@@ -20,7 +20,7 @@ all: proto build
 
 # Clean up generated files and binaries
 clean:
-	rm -rf $(GO_OUT_DIR)/$(PROTO_DIR)/*.pb.go
+	rm -rf $(GO_OUT_DIR)/grpc/*
 	rm -f $(SERVER_BIN) $(CLIENT_BIN)
 
 # Generate Go code from protobuf
